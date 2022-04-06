@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.backend.mayday.model.PlanoContingencia;
 import com.backend.mayday.model.SMSRequest;
-import com.backend.service.SMSService;
+import com.backend.mayday.service.SMSService;
 
 @RestController
 public class SMSController {

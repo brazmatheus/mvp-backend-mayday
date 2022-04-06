@@ -23,7 +23,7 @@ public class PlanoContingencia {
 	@Id
 	@Getter @Setter
 	@Column(name="ID")
-	private String idPlanoContingencia;
+	private Integer idPlanoContingencia;
 
 	@Getter @Setter
 	@Column(name="TITULO")
