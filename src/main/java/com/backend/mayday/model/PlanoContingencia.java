@@ -38,9 +38,18 @@ public class PlanoContingencia {
 	private String descPlanoContingencia;
 	
 	@Getter @Setter
+	@Column(name="COMUNICACAOALTERNATIVA")
+	private String comunicacaoAlternativaPlanoContingencia;
+
+	@Getter @Setter
+	@Column(name="HISTORICOEVENTOS")
+	private String historicoEventosPlanoContingencia;
+	
+	@Getter @Setter
 	@OneToMany(targetEntity = Tags.class , mappedBy = "planoContingencia")
 	private List<Tags> tags;
 	
+	@Getter @Setter
 	@ManyToMany(mappedBy = "planosContingencia")
 	private List<Recurso> recursos;
 	

@@ -28,9 +28,13 @@ public class Recurso {
 	private String descRecurso;
 	
 	@OneToOne
+	@Getter @Setter
     @JoinColumn(name = "ID_PESSOA", referencedColumnName = "ID")
 	private Pessoa pessoa;
 	
+	@Getter @Setter
+	@Column(name="QUANTIDADE")
+	private String quantidadeRecurso;
 	
 	@ManyToMany
 	@JoinTable(name="planoContingencia", 
