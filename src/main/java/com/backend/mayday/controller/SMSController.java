@@ -5,19 +5,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.backend.mayday.model.PlanoContingencia;
 import com.backend.mayday.model.SMSRequest;
-import com.backend.mayday.service.SMSService;
+//import com.backend.mayday.service.SMSService;
 
 @RestController
 public class SMSController {
 
-	SMSService smsService = new SMSService();
+//	SMSService smsService = new SMSService();
 
 	@GetMapping("/")
 	public String enviar() {
 		try {
 			SMSRequest smsRequest = new SMSRequest();
 			smsRequest.setMsg("Teste143");
-			smsService.enviaPost(smsRequest);
+//			smsService.enviaPost(smsRequest);
 		} catch (Exception e) {
 			throw e;
 		}

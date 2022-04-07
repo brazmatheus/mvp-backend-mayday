@@ -17,10 +17,12 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ManyToAny;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "PLANOCONTINGENCIA")
+@NoArgsConstructor
 public class PlanoContingencia {
 	
 	@Id
@@ -63,13 +65,13 @@ public class PlanoContingencia {
 	@OneToMany(targetEntity = PlanoContingenciaAgente.class, mappedBy = "planoContingencia", orphanRemoval = true)
 	private List<PlanoContingenciaAgente> agente;
 
-	public PlanoContingencia() {
-		this.tituloPlanoContingencia = "Digite um Título aqui:";
-		this.subtituloPlanoContingencia = "Digite um Subtítulo aqui:";
-		this.descPlanoContingencia = "Digite a descrição do plano aqui:";
-		this.historicoEventosPlanoContingencia = "Digite o histórico de eventos";
-		this.comunicacaoAlternativaPlanoContingencia = "Digite as comunicações alternativas";
-	}
+//	public PlanoContingencia() {
+//		this.tituloPlanoContingencia = "Digite um Título aqui:";
+//		this.subtituloPlanoContingencia = "Digite um Subtítulo aqui:";
+//		this.descPlanoContingencia = "Digite a descrição do plano aqui:";
+//		this.historicoEventosPlanoContingencia = "Digite o histórico de eventos";
+//		this.comunicacaoAlternativaPlanoContingencia = "Digite as comunicações alternativas";
+//	}
 	
 	
 
