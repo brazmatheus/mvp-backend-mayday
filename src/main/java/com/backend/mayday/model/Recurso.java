@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -29,17 +30,15 @@ public class Recurso {
 	
 	@OneToOne
 	@Getter @Setter
-    @JoinColumn(name = "ID_PESSOA", referencedColumnName = "ID")
-	private Pessoa pessoa;
+    @JoinColumn(name = "ID_RESPONSAVEL", referencedColumnName = "ID")
+	private Responsavel responsavel;
 	
 	@Getter @Setter
 	@Column(name="QUANTIDADE")
 	private String quantidadeRecurso;
 	
-	@ManyToMany
-	@JoinTable(name="planoContingencia", 
-	joinColumns= @JoinColumn(name="planoContingencia_id"),
-	inverseJoinColumns= @JoinColumn(name="recurso_id"))
-	List<PlanoContingencia> planosContingencia;
+//	@Getter @Setter
+//	@OneToMany(mappedBy = "recurso")
+//	private List<PlanoContingenciaRecurso> planosContingencia;
 
 }

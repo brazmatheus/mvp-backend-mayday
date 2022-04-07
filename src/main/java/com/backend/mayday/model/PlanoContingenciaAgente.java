@@ -15,10 +15,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "PLANOCONTINGENCIA_RECURSO")
-@IdClass(PlanoContingenciaRecursoKey.class)
+@Table(name = "PLANOCONTINGENCIA_AGENTE")
+@IdClass(PlanoContingenciaAgenteKey.class)
 @JsonIgnoreProperties(value = {"planoContingencia"})
-public class PlanoContingenciaRecurso {
+public class PlanoContingenciaAgente {
 
 	@Id
 	@ManyToOne
@@ -30,8 +30,9 @@ public class PlanoContingenciaRecurso {
 	@Id
 	@ManyToOne
 	@Getter @Setter
-	@MapsId("recurso")
-	@JoinColumn(name = "RECURSO_ID")
-	Recurso recurso;
+	@MapsId("agente")
+	@JoinColumn(name = "AGENTE_ID")
+	Pessoa agente;
 
 }
+

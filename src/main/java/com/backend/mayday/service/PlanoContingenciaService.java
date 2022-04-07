@@ -30,5 +30,22 @@ public class PlanoContingenciaService {
 			throw e;
 		}
 	}
-
+	
+	public PlanoContingencia cadastroDefaultPlanosContingencia() {
+		try {
+			PlanoContingencia p = new PlanoContingencia();
+			return this.planoContingenciaRepository.save(p);
+		}catch(Exception e) {
+			throw e;
+		}
+	}
+	
+	public PlanoContingencia editaPlanosContingencia(PlanoContingencia p) {
+		try {
+			return this.planoContingenciaRepository.save(p);
+		}catch(Exception e) {
+			throw e;
+		}
+	}
+	
 }

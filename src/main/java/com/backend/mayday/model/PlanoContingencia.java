@@ -4,10 +4,13 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,6 +24,7 @@ import lombok.Setter;
 public class PlanoContingencia {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Getter @Setter
 	@Column(name="ID")
 	private Integer idPlanoContingencia;
@@ -46,12 +50,27 @@ public class PlanoContingencia {
 	private String historicoEventosPlanoContingencia;
 	
 	@Getter @Setter
-	@OneToMany(targetEntity = Tags.class , mappedBy = "planoContingencia")
+	@OneToMany(mappedBy = "planoContingencia")
 	private List<Tags> tags;
 	
-	@Getter @Setter
-	@ManyToMany(mappedBy = "planosContingencia")
-	private List<Recurso> recursos;
+	@Getter
+	@Setter
+	@OneToMany(targetEntity = PlanoContingenciaRecurso.class, mappedBy = "planoContingencia")
+	private List<PlanoContingenciaRecurso> recurso;
+	
+	@Getter
+	@Setter
+	@OneToMany(targetEntity = PlanoContingenciaAgente.class, mappedBy = "planoContingencia", orphanRemoval = true)
+	private List<PlanoContingenciaAgente> agente;
+
+	public PlanoContingencia() {
+		this.tituloPlanoContingencia = "Digite um Título aqui:";
+		this.subtituloPlanoContingencia = "Digite um Subtítulo aqui:";
+		this.descPlanoContingencia = "Digite a descrição do plano aqui:";
+		this.historicoEventosPlanoContingencia = "Digite o histórico de eventos";
+		this.comunicacaoAlternativaPlanoContingencia = "Digite as comunicações alternativas";
+	}
+	
 	
 
 }

@@ -7,11 +7,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name="TAGS")
+@JsonIgnoreProperties(value = {"planoContingencia"})
 public class Tags {
 	
 	@Id
