@@ -20,7 +20,7 @@ public class Responsavel {
 	@Id
 	@Getter @Setter
 	@Column(name="ID")
-	private String cpf;
+	private Integer cpf;
 
 	@Getter @Setter
 	@NotNull

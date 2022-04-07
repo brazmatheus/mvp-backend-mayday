@@ -8,6 +8,4 @@ import com.backend.mayday.model.PlanoContingencia;
 @Repository
 public interface PlanoContingenciaRepository extends JpaRepository<PlanoContingencia, Integer> {
 	
-	
-
 }

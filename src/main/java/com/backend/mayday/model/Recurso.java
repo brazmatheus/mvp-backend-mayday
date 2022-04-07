@@ -2,8 +2,10 @@ package com.backend.mayday.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,16 +15,20 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name="RECURSO")
+@JsonIgnoreProperties(value = {"planoContingencia"})
 public class Recurso {
 	
 	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Getter @Setter
 	@Column(name="ID")
 	private String idRecurso;
@@ -31,7 +37,7 @@ public class Recurso {
 	@Column(name="DESCRICAO")
 	private String descRecurso;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@Getter @Setter
     @JoinColumn(name = "ID_RESPONSAVEL", referencedColumnName = "ID")
 	private Responsavel responsavel;
@@ -40,8 +46,11 @@ public class Recurso {
 	@Column(name="QUANTIDADE")
 	private String quantidadeRecurso;
 	
-//	@Getter @Setter
-//	@OneToMany(mappedBy = "recurso")
-//	private List<PlanoContingenciaRecurso> planosContingencia;
+	@ManyToMany
+	@JoinTable(name="PlanosRecursos", 
+	uniqueConstraints = @UniqueConstraint(columnNames = {"planosContingencia_id", "recursos_id"}), 
+	joinColumns = @JoinColumn(name = "planosContingencia_id"),
+	inverseJoinColumns = @JoinColumn(name = "recursos_id"))
+	private List<PlanoContingencia> planoContingencias;
 
 }

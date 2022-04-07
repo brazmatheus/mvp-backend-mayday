@@ -38,4 +38,11 @@ public class Departamento {
 	@OneToMany(targetEntity = Cargo.class , mappedBy = "departamento")
 	private List<Cargo> cargo;
 	
+//	public Departamento withLinkedCargo() {
+//		for (var c : this.cargo) {
+//			c.setDepartamento(this);
+//		}
+//		return this;
+//	}
+	
 }

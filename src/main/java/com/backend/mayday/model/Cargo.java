@@ -2,8 +2,10 @@ package com.backend.mayday.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,13 +38,20 @@ public class Cargo {
 	private String descCargo;
 	
 	@Getter @Setter
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_DEPARTAMENTO")
 	private Departamento departamento;
 	
 	@Getter @Setter
 	@OneToMany(targetEntity = Pessoa.class , mappedBy = "cargo")
 	private List<Pessoa> pessoa;
+	
+//	public Cargo withLinkedPessoa() {
+//		for (var p : this.pessoa) {
+//			p.setCargo(this);
+//		}
+//		return this;
+//	}
 	
 
 }

@@ -15,8 +15,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import org.hibernate.annotations.ManyToAny;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,7 +31,7 @@ import lombok.Setter;
 public class PlanoContingencia {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Getter @Setter
 	@Column(name="ID")
 	private Integer idPlanoContingencia;
@@ -57,16 +60,21 @@ public class PlanoContingencia {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoContingencia")
 	private List<Tags> tags;
 	
-	@Getter
-	@Setter
-	@OneToMany(targetEntity = PlanoContingenciaRecurso.class, mappedBy = "planoContingencia")
-//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PlanoContingenciaRecurso.class, mappedBy = "planoContingencia")
-	private List<PlanoContingenciaRecurso> recurso;
-	
-	@Getter
-	@Setter
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PlanoContingenciaAgente.class, mappedBy = "planoContingencia", orphanRemoval = true)
-	private List<PlanoContingenciaAgente> agente;
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinTable(name="PlanosAgentes", 
+	uniqueConstraints = @UniqueConstraint(columnNames = {"planosContingencia_id", "agentes_id"}), 
+	joinColumns = @JoinColumn(name = "agentes_id"),
+	inverseJoinColumns = @JoinColumn(name = "planosContingencia_id"))
+	@Getter @Setter
+	private List<Pessoa> agentes;
+
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinTable(name="PlanosRecursos", 
+	uniqueConstraints = @UniqueConstraint(columnNames = {"planosContingencia_id", "recursos_id"}), 
+	joinColumns = @JoinColumn(name = "recursos_id"),
+	inverseJoinColumns = @JoinColumn(name = "planosContingencia_id"))
+	@Getter @Setter
+	private List<Recurso> recursos;
 
 //	public PlanoContingencia() {
 //		this.tituloPlanoContingencia = "Digite um Título aqui:";
@@ -80,15 +88,7 @@ public class PlanoContingencia {
 		for (var tag : this.tags) {
 			tag.setPlanoContingencia(this);
 		}
-//		for (var a : this.agente) {
-//			a.setPlanoContingencia(this);
-//		}
-//		for (var r : this.recurso) {
-//			r.setPlanoContingencia(this);
-//		}
 		return this;
 	}
-	
-	
 
 }

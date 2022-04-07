@@ -1,14 +1,22 @@
 package com.backend.mayday.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import lombok.Getter;
@@ -16,12 +24,13 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "PESSOA")
+@JsonIgnoreProperties(value = {"planoContingencia"})
 public class Pessoa {
 	
 	@Id
 	@Getter @Setter
 	@Column(name="ID")
-	private String cpf;
+	private Integer cpf;
 
 	@Getter @Setter
 	@NotNull
@@ -33,9 +42,16 @@ public class Pessoa {
 	private String telefone;
 	
 	@Getter @Setter
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_CARGO")
 	private Cargo cargo;
+	
+	@ManyToMany
+	@JoinTable(name="PlanosAgentes", 
+	uniqueConstraints = @UniqueConstraint(columnNames = {"planosContingencia_id", "agentes_id"}), 
+	joinColumns = @JoinColumn(name = "planosContingencia_id"),
+	inverseJoinColumns = @JoinColumn(name = "agentes_id"))
+	private List<PlanoContingencia> planoContingencia;
 	
 
 }
