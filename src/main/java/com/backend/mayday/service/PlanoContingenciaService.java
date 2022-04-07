@@ -25,7 +25,7 @@ public class PlanoContingenciaService {
 	
 	public PlanoContingencia cadastraPlanosContingencia(PlanoContingencia p) {
 		try {
-			return this.planoContingenciaRepository.save(p);
+			return this.planoContingenciaRepository.save(p.withLinkedTags());
 		}catch(Exception e) {
 			throw e;
 		}

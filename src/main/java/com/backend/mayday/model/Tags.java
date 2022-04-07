@@ -2,6 +2,8 @@ package com.backend.mayday.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,16 +23,17 @@ import lombok.Setter;
 public class Tags {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Getter @Setter
 	@Column(name="ID")
-	private String idTags;
+	private Integer idTags;
 	
 	@Getter @Setter
 	@Column(name="DESCRICAO")
 	private String descTags;
 	
 	@Getter @Setter
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="ID_PLANOCONTINGENCIA")
 	private PlanoContingencia planoContingencia;
 

@@ -2,8 +2,10 @@ package com.backend.mayday.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -52,17 +54,18 @@ public class PlanoContingencia {
 	private String historicoEventosPlanoContingencia;
 	
 	@Getter @Setter
-	@OneToMany(mappedBy = "planoContingencia")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoContingencia")
 	private List<Tags> tags;
 	
 	@Getter
 	@Setter
 	@OneToMany(targetEntity = PlanoContingenciaRecurso.class, mappedBy = "planoContingencia")
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PlanoContingenciaRecurso.class, mappedBy = "planoContingencia")
 	private List<PlanoContingenciaRecurso> recurso;
 	
 	@Getter
 	@Setter
-	@OneToMany(targetEntity = PlanoContingenciaAgente.class, mappedBy = "planoContingencia", orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PlanoContingenciaAgente.class, mappedBy = "planoContingencia", orphanRemoval = true)
 	private List<PlanoContingenciaAgente> agente;
 
 //	public PlanoContingencia() {
@@ -72,6 +75,19 @@ public class PlanoContingencia {
 //		this.historicoEventosPlanoContingencia = "Digite o histórico de eventos";
 //		this.comunicacaoAlternativaPlanoContingencia = "Digite as comunicações alternativas";
 //	}
+	
+	public PlanoContingencia withLinkedTags() {
+		for (var tag : this.tags) {
+			tag.setPlanoContingencia(this);
+		}
+//		for (var a : this.agente) {
+//			a.setPlanoContingencia(this);
+//		}
+//		for (var r : this.recurso) {
+//			r.setPlanoContingencia(this);
+//		}
+		return this;
+	}
 	
 	
 

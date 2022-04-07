@@ -13,11 +13,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name="DEPARTAMENTO")
+@JsonIgnoreProperties(value = {"cargo"})
 public class Departamento {
 
 	@Id

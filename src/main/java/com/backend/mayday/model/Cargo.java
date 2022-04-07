@@ -14,11 +14,14 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name="CARGO")
+@JsonIgnoreProperties(value = {"pessoa"})
 public class Cargo {
 	
 	@Id
