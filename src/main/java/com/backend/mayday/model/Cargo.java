@@ -16,14 +16,17 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name="CARGO")
-@JsonIgnoreProperties(value = {"pessoa"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Cargo {
 	
 	@Id
@@ -44,6 +47,7 @@ public class Cargo {
 	
 	@Getter @Setter
 	@OneToMany(targetEntity = Pessoa.class , mappedBy = "cargo")
+	@JsonIgnore
 	private List<Pessoa> pessoa;
 	
 //	public Cargo withLinkedPessoa() {

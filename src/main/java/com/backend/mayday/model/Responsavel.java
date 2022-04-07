@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import lombok.Getter;
@@ -15,6 +17,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "RESPONSAVEL")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Responsavel {
 	
 	@Id
@@ -32,6 +35,7 @@ public class Responsavel {
 	private String telefone;
 	
 	@OneToOne(mappedBy = "responsavel")
+	@JsonIgnore
 	private Recurso recurso;
 
 }

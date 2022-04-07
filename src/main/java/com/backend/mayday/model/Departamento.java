@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
@@ -20,7 +21,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="DEPARTAMENTO")
-@JsonIgnoreProperties(value = {"cargo"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Departamento {
 
 	@Id
@@ -33,9 +34,10 @@ public class Departamento {
 	@Getter @Setter
 	@Column(name="DESCRICAO")
 	private String descDepartamento;
-	
+
+	@OneToMany(targetEntity = Cargo.class , mappedBy = "departamento")	
 	@Getter @Setter
-	@OneToMany(targetEntity = Cargo.class , mappedBy = "departamento")
+	@JsonIgnore
 	private List<Cargo> cargo;
 	
 //	public Departamento withLinkedCargo() {

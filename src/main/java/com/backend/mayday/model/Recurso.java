@@ -17,6 +17,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
@@ -24,14 +25,14 @@ import lombok.Setter;
 
 @Entity
 @Table(name="RECURSO")
-@JsonIgnoreProperties(value = {"planoContingencia"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Recurso {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Getter @Setter
 	@Column(name="ID")
-	private String idRecurso;
+	private Integer idRecurso;
 	
 	@Getter @Setter
 	@Column(name="DESCRICAO")
@@ -51,6 +52,8 @@ public class Recurso {
 	uniqueConstraints = @UniqueConstraint(columnNames = {"planosContingencia_id", "recursos_id"}), 
 	joinColumns = @JoinColumn(name = "planosContingencia_id"),
 	inverseJoinColumns = @JoinColumn(name = "recursos_id"))
+	@Getter @Setter
+	@JsonIgnore
 	private List<PlanoContingencia> planoContingencias;
 
 }

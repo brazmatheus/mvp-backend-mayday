@@ -27,6 +27,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "PLANOCONTINGENCIA")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @NoArgsConstructor
 public class PlanoContingencia {
 	
