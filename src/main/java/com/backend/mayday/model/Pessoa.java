@@ -54,7 +54,7 @@ public class Pessoa {
 	inverseJoinColumns = @JoinColumn(name = "agentes_id"))
 	@Getter @Setter
 	@JsonIgnore
-	private List<PlanoContingencia> planoContingencia;
+	private List<PlanoAtivacao> planoAtivacao;
 	
 
 }

@@ -54,6 +54,6 @@ public class Recurso {
 	inverseJoinColumns = @JoinColumn(name = "recursos_id"))
 	@Getter @Setter
 	@JsonIgnore
-	private List<PlanoContingencia> planoContingencias;
+	private List<PlanoAtivacao> planoAtivacaos;
 
 }

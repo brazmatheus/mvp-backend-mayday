@@ -19,7 +19,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="TAGS")
-@JsonIgnoreProperties(value = {"planoContingencia"})
+@JsonIgnoreProperties(value = {"planoAtivacao"})
 public class Tags {
 	
 	@Id
@@ -33,8 +33,12 @@ public class Tags {
 	private String descTags;
 	
 	@Getter @Setter
+	@Column(name="COR")
+	private String cor;
+	
+	@Getter @Setter
 	@ManyToOne()
 	@JoinColumn(name="ID_PLANOCONTINGENCIA")
-	private PlanoContingencia planoContingencia;
+	private PlanoAtivacao planoAtivacao;
 
 }

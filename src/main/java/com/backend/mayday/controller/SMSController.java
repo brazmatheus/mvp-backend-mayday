@@ -3,7 +3,7 @@ package com.backend.mayday.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backend.mayday.model.PlanoContingencia;
+import com.backend.mayday.model.PlanoAtivacao;
 import com.backend.mayday.model.SMSRequest;
 //import com.backend.mayday.service.SMSService;
 
@@ -27,7 +27,7 @@ public class SMSController {
 	@GetMapping("/teste")
 	public String testa() {
 		try {
-			PlanoContingencia planoContingencia = new PlanoContingencia();
+			PlanoAtivacao planoAtivacao = new PlanoAtivacao();
 		} catch (Exception e) {
 			throw e;
 		}

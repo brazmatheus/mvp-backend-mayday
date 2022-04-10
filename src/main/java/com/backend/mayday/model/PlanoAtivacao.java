@@ -26,39 +26,39 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "PLANOCONTINGENCIA")
+@Table(name = "PLANOATIVACAO")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @NoArgsConstructor
-public class PlanoContingencia {
+public class PlanoAtivacao {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Getter @Setter
 	@Column(name="ID")
-	private Integer idPlanoContingencia;
+	private Integer id;
 
 	@Getter @Setter
 	@Column(name="TITULO")
-	private String tituloPlanoContingencia;
+	private String titulo;
 	
 	@Getter @Setter
 	@Column(name="SUBTITULO")
-	private String subtituloPlanoContingencia;
+	private String subtitulo;
 	
 	@Getter @Setter
 	@Column(name="DESCRICAO")
-	private String descPlanoContingencia;
+	private String descricao;
 	
 	@Getter @Setter
 	@Column(name="COMUNICACAOALTERNATIVA")
-	private String comunicacaoAlternativaPlanoContingencia;
+	private String comunicacaoAlternativa;
 
 	@Getter @Setter
 	@Column(name="HISTORICOEVENTOS")
-	private String historicoEventosPlanoContingencia;
+	private String historicoEventos;
 	
 	@Getter @Setter
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoContingencia")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoAtivacao")
 	private List<Tags> tags;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -77,17 +77,18 @@ public class PlanoContingencia {
 	@Getter @Setter
 	private List<Recurso> recursos;
 
-//	public PlanoContingencia() {
-//		this.tituloPlanoContingencia = "Digite um Título aqui:";
-//		this.subtituloPlanoContingencia = "Digite um Subtítulo aqui:";
-//		this.descPlanoContingencia = "Digite a descrição do plano aqui:";
-//		this.historicoEventosPlanoContingencia = "Digite o histórico de eventos";
-//		this.comunicacaoAlternativaPlanoContingencia = "Digite as comunicações alternativas";
-//	}
+	public PlanoAtivacao planoAtivacaoDefault() {
+		this.titulo = "Digite um Título aqui:";
+		this.subtitulo = "Digite um Subtítulo aqui:";
+		this.descricao = "Digite a descrição do plano aqui:";
+		this.historicoEventos = "Digite o histórico de eventos";
+		this.comunicacaoAlternativa = "Digite as comunicações alternativas";
+		return this;
+	}
 	
-	public PlanoContingencia withLinkedTags() {
+	public PlanoAtivacao withLinkedTags() {
 		for (var tag : this.tags) {
-			tag.setPlanoContingencia(this);
+			tag.setPlanoAtivacao(this);
 		}
 		return this;
 	}
