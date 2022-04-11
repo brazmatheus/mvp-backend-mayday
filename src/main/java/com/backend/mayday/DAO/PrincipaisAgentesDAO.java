@@ -11,7 +11,7 @@ import lombok.Setter;
 public class PrincipaisAgentesDAO {
 	
 	@Getter @Setter
-	private Integer id;
+	private String id;
 
 	@Getter @Setter
 	private String nome;
@@ -21,15 +21,5 @@ public class PrincipaisAgentesDAO {
 
 	@Getter @Setter
 	private String telefone;
-	
-	public PrincipaisAgentesDAO convertPrincipaisAgentesDAO(Pessoa pAgentes) {
-		
-		this.id = pAgentes.getCpf();
-		this.cargo = pAgentes.getCargo().getDescCargo();
-		this.nome = pAgentes.getNome();
-		this.telefone = pAgentes.getTelefone();
-		
-		return this;
-	}
 
 }

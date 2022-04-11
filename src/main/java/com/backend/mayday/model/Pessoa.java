@@ -31,7 +31,7 @@ public class Pessoa {
 	@Id
 	@Getter @Setter
 	@Column(name="ID")
-	private Integer cpf;
+	private String cpf;
 
 	@Getter @Setter
 	@NotNull

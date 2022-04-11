@@ -2,6 +2,7 @@ package com.backend.mayday.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,14 @@ public class PlanoAtivacaoService {
 	public List<PlanoAtivacao> buscarPlanosContingencia() {
 		try {
 			return this.planoAtivacaoRepository.findAll();
+		}catch(Exception e) {
+			throw e;
+		}
+	}
+	
+	public Optional<PlanoAtivacao> buscarPlanosContingenciaById(Integer idPlano) {
+		try {
+			return this.planoAtivacaoRepository.findById(idPlano);
 		}catch(Exception e) {
 			throw e;
 		}
