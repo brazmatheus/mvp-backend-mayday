@@ -29,7 +29,7 @@ import lombok.Setter;
 public class Recurso {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Getter @Setter
 	@Column(name="ID")
 	private Integer idRecurso;
@@ -47,7 +47,7 @@ public class Recurso {
 	@Column(name="QUANTIDADE")
 	private String quantidadeRecurso;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinTable(name="PlanosRecursos", 
 	uniqueConstraints = @UniqueConstraint(columnNames = {"planosContingencia_id", "recursos_id"}), 
 	joinColumns = @JoinColumn(name = "planosContingencia_id"),

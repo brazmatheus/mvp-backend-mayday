@@ -1,5 +1,6 @@
 package com.backend.mayday.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +24,7 @@ import lombok.Setter;
 public class Tags {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Getter @Setter
 	@Column(name="ID")
 	private Integer idTags;
