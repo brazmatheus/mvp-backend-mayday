@@ -58,6 +58,10 @@ public class PlanoAtivacao {
 	private String historicoEventos;
 	
 	@Getter @Setter
+	@Column(name="DANOS")
+	private String danos;
+	
+	@Getter @Setter
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoAtivacao")
 	private List<Tags> tags;
 	
@@ -76,6 +80,11 @@ public class PlanoAtivacao {
 	inverseJoinColumns = @JoinColumn(name = "planosContingencia_id"))
 	@Getter @Setter
 	private List<Recurso> recursos;
+	
+	@Getter @Setter
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name="ID_CIDADE")
+	private Cidade cidade;
 
 	public PlanoAtivacao planoAtivacaoDefault() {
 		this.titulo = "Digite um Título aqui:";
@@ -83,6 +92,7 @@ public class PlanoAtivacao {
 		this.descricao = "Digite a descrição do plano aqui:";
 		this.historicoEventos = "Digite o histórico de eventos";
 		this.comunicacaoAlternativa = "Digite as comunicações alternativas";
+		this.danos = "Digite os danos";
 		return this;
 	}
 	

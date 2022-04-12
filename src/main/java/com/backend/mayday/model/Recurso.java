@@ -41,7 +41,7 @@ public class Recurso {
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@Getter @Setter
     @JoinColumn(name = "ID_RESPONSAVEL", referencedColumnName = "ID")
-	private Responsavel responsavel;
+	private Pessoa responsavel;
 	
 	@Getter @Setter
 	@Column(name="QUANTIDADE")

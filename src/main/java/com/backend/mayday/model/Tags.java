@@ -3,6 +3,7 @@ package com.backend.mayday.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +25,7 @@ import lombok.Setter;
 public class Tags {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Getter @Setter
 	@Column(name="ID")
 	private Integer idTags;
@@ -38,7 +39,7 @@ public class Tags {
 	private String cor;
 	
 	@Getter @Setter
-	@ManyToOne()
+	@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_PLANOCONTINGENCIA")
 	private PlanoAtivacao planoAtivacao;
 

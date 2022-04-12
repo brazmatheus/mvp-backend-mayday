@@ -7,53 +7,50 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.ManyToAny;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
+
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "PESSOA")
+@Table(name="CIDADE")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Pessoa {
+public class Cidade {
 	
 	@Id
+//	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Getter @Setter
 	@Column(name="ID")
-	private String cpf;
-
-	@Getter @Setter
-	@NotNull
-	@Column(name="NOME")
-	private String nome;
+	private Integer id;
 	
 	@Getter @Setter
-	@Column(name="TELEFONE")
-	private String telefone;
+	@Column(name="DESCRICAO")
+	private String descricao;
 	
 	@Getter @Setter
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_CARGO")
-	private Cargo cargo;
+	@Column(name="IBGE")
+	private String ibge;
 	
 	@Getter @Setter
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="ID_CIDADE")
-	private Cidade cidade;
-	
-	@ManyToMany(mappedBy = "agentes")
+	@OneToMany(targetEntity = PlanoAtivacao.class , mappedBy = "cidade")
+	@JsonIgnore
 	private List<PlanoAtivacao> planoAtivacao;
 	
-
+	@Getter @Setter
+	@OneToMany(targetEntity = PlanoAtivacao.class , mappedBy = "cidade")
+	@JsonIgnore
+	private List<Pessoa> pessoa;
+	
 }

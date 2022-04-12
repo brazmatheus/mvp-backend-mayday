@@ -43,6 +43,15 @@ public class PlanoAtivacaoController {
 			}
 		}
 		
+		@GetMapping("/buscarByIdCidade")
+		public List<PlanoAtivacaoResumoDAO> buscarTodosPorId(@RequestParam("idCidade") Integer idCidade) {
+			try {
+				return planoAtivacaoService.buscarPlanosContingenciaByIdCidade(idCidade);
+			} catch (Exception e) {
+				throw e;
+			}
+		}
+		
 		@GetMapping("/buscarResumoPlano")
 		public List<PlanoAtivacaoResumoDAO> buscarResumoTodos() {
 			try {
@@ -61,10 +70,10 @@ public class PlanoAtivacaoController {
 			}
 		}
 		
-		@PostMapping("/cadastroDefault")
-		public PlanoAtivacao cadastrarDefault() {
+		@GetMapping("/cadastroDefault")
+		public PlanoAtivacao cadastrarDefault(@RequestParam("idCidade") Integer idCidade) {
 			try {
-				return planoAtivacaoService.cadastroDefaultPlanosContingencia();
+				return planoAtivacaoService.cadastroDefaultPlanosContingencia(idCidade);
 			} catch (Exception e) {
 				throw e;
 			}
