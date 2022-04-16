@@ -54,6 +54,5 @@ public class Pessoa {
 	
 	@ManyToMany(mappedBy = "agentes")
 	private List<PlanoAtivacao> planoAtivacao;
-	
 
 }

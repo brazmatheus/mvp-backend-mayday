@@ -85,6 +85,10 @@ public class PlanoAtivacao {
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="ID_CIDADE")
 	private Cidade cidade;
+	
+	@Getter @Setter
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoAtivacao")
+	private List<PontosInteresse> pontoInteresse;
 
 	public PlanoAtivacao planoAtivacaoDefault() {
 		this.titulo = "Digite um Título aqui:";

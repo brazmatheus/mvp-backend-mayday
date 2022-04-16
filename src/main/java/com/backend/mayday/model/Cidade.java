@@ -49,8 +49,11 @@ public class Cidade {
 	private List<PlanoAtivacao> planoAtivacao;
 	
 	@Getter @Setter
-	@OneToMany(targetEntity = PlanoAtivacao.class , mappedBy = "cidade")
+	@OneToMany(targetEntity = Pessoa.class , mappedBy = "cidade")
 	@JsonIgnore
 	private List<Pessoa> pessoa;
+	
+	@OneToMany(targetEntity = Departamento.class , mappedBy = "cidade")
+	private List<Departamento> departamento;
 	
 }

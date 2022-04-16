@@ -7,6 +7,6 @@ import com.backend.mayday.model.Pessoa;
 import com.backend.mayday.model.PlanoAtivacao;
 
 @Repository
-public interface AgenteRepository extends JpaRepository<Pessoa, String> {
+public interface PessoaRepository extends JpaRepository<Pessoa, String> {
 	
 }

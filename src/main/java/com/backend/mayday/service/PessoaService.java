@@ -9,35 +9,34 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.backend.mayday.DAO.PlanoAtivacaoResumoDAO;
-import com.backend.mayday.model.Cidade;
 import com.backend.mayday.model.Pessoa;
 import com.backend.mayday.model.PlanoAtivacao;
-import com.backend.mayday.model.Recurso;
+import com.backend.mayday.model.Tags;
 import com.backend.mayday.repository.PessoaRepository;
-import com.backend.mayday.repository.CidadeRepository;
 import com.backend.mayday.repository.PlanoAtivacaoRepository;
+import com.backend.mayday.repository.TagsRepository;
 import com.backend.mayday.util.Converters;
 
 @Service
-public class CidadeService {
-	
+public class PessoaService {
+
 	@Autowired
-	private CidadeRepository cidadeRepository;
-	
-	public List<Cidade> buscarCidade() {
+	private PessoaRepository pessoaRepository;
+
+	public Optional<Pessoa> buscarPessoaByCpf(String cpf) {
 		try {
-			return this.cidadeRepository.findAll();
-		}catch(Exception e) {
+			return this.pessoaRepository.findById(cpf);
+		} catch (Exception e) {
 			throw e;
 		}
 	}
-	
-	public List<Cidade> cadastrarCidade(List<Cidade> cidade) {
+
+	public Pessoa cadastrarPessoa(Pessoa pessoa) {
 		try {
-			return this.cidadeRepository.saveAll(cidade);
-		}catch(Exception e) {
+			return this.pessoaRepository.save(pessoa);
+		} catch (Exception e) {
 			throw e;
 		}
 	}
-	
+
 }

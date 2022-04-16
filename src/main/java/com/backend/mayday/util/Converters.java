@@ -28,7 +28,7 @@ public class Converters {
 	
 	public PrincipaisAgentesDAO principaisAgentesConv(Pessoa agente) {
 		PrincipaisAgentesDAO principaisAgentesDAO = new PrincipaisAgentesDAO();
-		principaisAgentesDAO.setCargo(agente.getCargo().getDescCargo());
+		principaisAgentesDAO.setCargo(agente.getCargo().getDescricao());
 		principaisAgentesDAO.setId(agente.getCpf());
 		principaisAgentesDAO.setNome(agente.getNome());
 		principaisAgentesDAO.setTelefone(agente.getTelefone());
