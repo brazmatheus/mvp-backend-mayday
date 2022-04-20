@@ -1,5 +1,6 @@
 package com.backend.mayday.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,8 +30,13 @@ import lombok.Setter;
 @Table(name = "PLANOATIVACAO")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @NoArgsConstructor
-public class PlanoAtivacao {
+public class PlanoAtivacao implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -900181837811828652L;
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Getter @Setter
@@ -87,7 +93,7 @@ public class PlanoAtivacao {
 	private Cidade cidade;
 	
 	@Getter @Setter
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "planoAtivacao")
+	@OneToMany(cascade = CascadeType.ALL, targetEntity = PontosInteresse.class ,mappedBy = "planoAtivacao")
 	private List<PontosInteresse> pontoInteresse;
 
 	public PlanoAtivacao planoAtivacaoDefault() {

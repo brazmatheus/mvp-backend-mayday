@@ -1,0 +1,1232 @@
+[
+	{
+		"id": 0,
+		"descricao": "Abadia de Goiás",
+		"ibge": "5200050"
+	},
+	{
+		"id": 1,
+		"descricao": "Abadiânia",
+		"ibge": "5200100"
+	},
+	{
+		"id": 2,
+		"descricao": "Acreúna",
+		"ibge": "5200134"
+	},
+	{
+		"id": 3,
+		"descricao": "Adelândia",
+		"ibge": "5200159"
+	},
+	{
+		"id": 4,
+		"descricao": "Água Fria de Goiás",
+		"ibge": "5200175"
+	},
+	{
+		"id": 5,
+		"descricao": "Água Limpa",
+		"ibge": "5200209"
+	},
+	{
+		"id": 6,
+		"descricao": "Águas Lindas de Goiás",
+		"ibge": "5200258"
+	},
+	{
+		"id": 7,
+		"descricao": "Alexânia",
+		"ibge": "5200308"
+	},
+	{
+		"id": 8,
+		"descricao": "Aloândia",
+		"ibge": "5200506"
+	},
+	{
+		"id": 9,
+		"descricao": "Alto Horizonte",
+		"ibge": "5200555"
+	},
+	{
+		"id": 10,
+		"descricao": "Alto Paraíso de Goiás",
+		"ibge": "5200605"
+	},
+	{
+		"id": 11,
+		"descricao": "Alvorada do Norte",
+		"ibge": "5200803"
+	},
+	{
+		"id": 12,
+		"descricao": "Amaralina",
+		"ibge": "5200829"
+	},
+	{
+		"id": 13,
+		"descricao": "Americano do Brasil",
+		"ibge": "5200852"
+	},
+	{
+		"id": 14,
+		"descricao": "Amorinópolis",
+		"ibge": "5200902"
+	},
+	{
+		"id": 15,
+		"descricao": "Anápolis",
+		"ibge": "5201108"
+	},
+	{
+		"id": 16,
+		"descricao": "Anhanguera",
+		"ibge": "5201207"
+	},
+	{
+		"id": 17,
+		"descricao": "Anicuns",
+		"ibge": "5201306"
+	},
+	{
+		"id": 18,
+		"descricao": "Aparecida de Goiânia",
+		"ibge": "5201405"
+	},
+	{
+		"id": 19,
+		"descricao": "Aparecida do Rio Doce",
+		"ibge": "5201454"
+	},
+	{
+		"id": 20,
+		"descricao": "Aporé",
+		"ibge": "5201504"
+	},
+	{
+		"id": 21,
+		"descricao": "Araçu",
+		"ibge": "5201603"
+	},
+	{
+		"id": 22,
+		"descricao": "Aragarças",
+		"ibge": "5201702"
+	},
+	{
+		"id": 23,
+		"descricao": "Aragoiânia",
+		"ibge": "5201801"
+	},
+	{
+		"id": 24,
+		"descricao": "Araguapaz",
+		"ibge": "5202155"
+	},
+	{
+		"id": 25,
+		"descricao": "Arenópolis",
+		"ibge": "5202353"
+	},
+	{
+		"id": 26,
+		"descricao": "Aruanã",
+		"ibge": "5202502"
+	},
+	{
+		"id": 27,
+		"descricao": "Aurilândia",
+		"ibge": "5202601"
+	},
+	{
+		"id": 28,
+		"descricao": "Avelinópolis",
+		"ibge": "5202809"
+	},
+	{
+		"id": 29,
+		"descricao": "Baliza",
+		"ibge": "5203104"
+	},
+	{
+		"id": 30,
+		"descricao": "Barro Alto",
+		"ibge": "5203203"
+	},
+	{
+		"id": 31,
+		"descricao": "Bela Vista de Goiás",
+		"ibge": "5203302"
+	},
+	{
+		"id": 32,
+		"descricao": "Bom Jardim de Goiás",
+		"ibge": "5203401"
+	},
+	{
+		"id": 33,
+		"descricao": "Bom Jesus de Goiás",
+		"ibge": "5203500"
+	},
+	{
+		"id": 34,
+		"descricao": "Bonfinópolis",
+		"ibge": "5203559"
+	},
+	{
+		"id": 35,
+		"descricao": "Bonópolis",
+		"ibge": "5203575"
+	},
+	{
+		"id": 36,
+		"descricao": "Brazabrantes",
+		"ibge": "5203609"
+	},
+	{
+		"id": 37,
+		"descricao": "Britânia",
+		"ibge": "5203807"
+	},
+	{
+		"id": 38,
+		"descricao": "Buriti Alegre",
+		"ibge": "5203906"
+	},
+	{
+		"id": 39,
+		"descricao": "Buriti de Goiás",
+		"ibge": "5203939"
+	},
+	{
+		"id": 40,
+		"descricao": "Buritinópolis",
+		"ibge": "5203962"
+	},
+	{
+		"id": 41,
+		"descricao": "Cabeceiras",
+		"ibge": "5204003"
+	},
+	{
+		"id": 42,
+		"descricao": "Cachoeira Alta",
+		"ibge": "5204102"
+	},
+	{
+		"id": 43,
+		"descricao": "Cachoeira de Goiás",
+		"ibge": "5204201"
+	},
+	{
+		"id": 44,
+		"descricao": "Cachoeira Dourada",
+		"ibge": "5204250"
+	},
+	{
+		"id": 45,
+		"descricao": "Caçu",
+		"ibge": "5204300"
+	},
+	{
+		"id": 46,
+		"descricao": "Caiapônia",
+		"ibge": "5204409"
+	},
+	{
+		"id": 47,
+		"descricao": "Caldas Novas",
+		"ibge": "5204508"
+	},
+	{
+		"id": 48,
+		"descricao": "Caldazinha",
+		"ibge": "5204557"
+	},
+	{
+		"id": 49,
+		"descricao": "Campestre de Goiás",
+		"ibge": "5204607"
+	},
+	{
+		"id": 50,
+		"descricao": "Campinaçu",
+		"ibge": "5204656"
+	},
+	{
+		"id": 51,
+		"descricao": "Campinorte",
+		"ibge": "5204706"
+	},
+	{
+		"id": 52,
+		"descricao": "Campo Alegre de Goiás",
+		"ibge": "5204805"
+	},
+	{
+		"id": 53,
+		"descricao": "Campo Limpo de Goiás",
+		"ibge": "5204854"
+	},
+	{
+		"id": 54,
+		"descricao": "Campos Belos",
+		"ibge": "5204904"
+	},
+	{
+		"id": 55,
+		"descricao": "Campos Verdes",
+		"ibge": "5204953"
+	},
+	{
+		"id": 56,
+		"descricao": "Carmo do Rio Verde",
+		"ibge": "5205000"
+	},
+	{
+		"id": 57,
+		"descricao": "Castelândia",
+		"ibge": "5205059"
+	},
+	{
+		"id": 58,
+		"descricao": "Catalão",
+		"ibge": "5205109"
+	},
+	{
+		"id": 59,
+		"descricao": "Caturaí",
+		"ibge": "5205208"
+	},
+	{
+		"id": 60,
+		"descricao": "Cavalcante",
+		"ibge": "5205307"
+	},
+	{
+		"id": 61,
+		"descricao": "Ceres",
+		"ibge": "5205406"
+	},
+	{
+		"id": 62,
+		"descricao": "Cezarina",
+		"ibge": "5205455"
+	},
+	{
+		"id": 63,
+		"descricao": "Chapadão do Céu",
+		"ibge": "5205471"
+	},
+	{
+		"id": 64,
+		"descricao": "Cidade Ocidental",
+		"ibge": "5205497"
+	},
+	{
+		"id": 65,
+		"descricao": "Cocalzinho de Goiás",
+		"ibge": "5205513"
+	},
+	{
+		"id": 66,
+		"descricao": "Colinas do Sul",
+		"ibge": "5205521"
+	},
+	{
+		"id": 67,
+		"descricao": "Córrego do Ouro",
+		"ibge": "5205703"
+	},
+	{
+		"id": 68,
+		"descricao": "Corumbá de Goiás",
+		"ibge": "5205802"
+	},
+	{
+		"id": 69,
+		"descricao": "Corumbaíba",
+		"ibge": "5205901"
+	},
+	{
+		"id": 70,
+		"descricao": "Cristalina",
+		"ibge": "5206206"
+	},
+	{
+		"id": 71,
+		"descricao": "Cristianópolis",
+		"ibge": "5206305"
+	},
+	{
+		"id": 72,
+		"descricao": "Crixás",
+		"ibge": "5206404"
+	},
+	{
+		"id": 73,
+		"descricao": "Cromínia",
+		"ibge": "5206503"
+	},
+	{
+		"id": 74,
+		"descricao": "Cumari",
+		"ibge": "5206602"
+	},
+	{
+		"id": 75,
+		"descricao": "Damianópolis",
+		"ibge": "5206701"
+	},
+	{
+		"id": 76,
+		"descricao": "Damolândia",
+		"ibge": "5206800"
+	},
+	{
+		"id": 77,
+		"descricao": "Davinópolis",
+		"ibge": "5206909"
+	},
+	{
+		"id": 78,
+		"descricao": "Diorama",
+		"ibge": "5207105"
+	},
+	{
+		"id": 79,
+		"descricao": "Doverlândia",
+		"ibge": "5207253"
+	},
+	{
+		"id": 80,
+		"descricao": "Edealina",
+		"ibge": "5207352"
+	},
+	{
+		"id": 81,
+		"descricao": "Edéia",
+		"ibge": "5207402"
+	},
+	{
+		"id": 82,
+		"descricao": "Estrela do Norte",
+		"ibge": "5207501"
+	},
+	{
+		"id": 83,
+		"descricao": "Faina",
+		"ibge": "5207535"
+	},
+	{
+		"id": 84,
+		"descricao": "Fazenda Nova",
+		"ibge": "5207600"
+	},
+	{
+		"id": 85,
+		"descricao": "Firminópolis",
+		"ibge": "5207808"
+	},
+	{
+		"id": 86,
+		"descricao": "Flores de Goiás",
+		"ibge": "5207907"
+	},
+	{
+		"id": 87,
+		"descricao": "Formosa",
+		"ibge": "5208004"
+	},
+	{
+		"id": 88,
+		"descricao": "Formoso",
+		"ibge": "5208103"
+	},
+	{
+		"id": 89,
+		"descricao": "Gameleira de Goiás",
+		"ibge": "5208152"
+	},
+	{
+		"id": 90,
+		"descricao": "Divinópolis de Goiás",
+		"ibge": "5208301"
+	},
+	{
+		"id": 91,
+		"descricao": "Goianápolis",
+		"ibge": "5208400"
+	},
+	{
+		"id": 92,
+		"descricao": "Goiandira",
+		"ibge": "5208509"
+	},
+	{
+		"id": 93,
+		"descricao": "Goianésia",
+		"ibge": "5208608"
+	},
+	{
+		"id": 94,
+		"descricao": "Goiânia",
+		"ibge": "5208707"
+	},
+	{
+		"id": 95,
+		"descricao": "Goianira",
+		"ibge": "5208806"
+	},
+	{
+		"id": 96,
+		"descricao": "Goiás",
+		"ibge": "5208905"
+	},
+	{
+		"id": 97,
+		"descricao": "Goiatuba",
+		"ibge": "5209101"
+	},
+	{
+		"id": 98,
+		"descricao": "Gouvelândia",
+		"ibge": "5209150"
+	},
+	{
+		"id": 99,
+		"descricao": "Guapó",
+		"ibge": "5209200"
+	},
+	{
+		"id": 100,
+		"descricao": "Guaraíta",
+		"ibge": "5209291"
+	},
+	{
+		"id": 101,
+		"descricao": "Guarani de Goiás",
+		"ibge": "5209408"
+	},
+	{
+		"id": 102,
+		"descricao": "Guarinos",
+		"ibge": "5209457"
+	},
+	{
+		"id": 103,
+		"descricao": "Heitoraí",
+		"ibge": "5209606"
+	},
+	{
+		"id": 104,
+		"descricao": "Hidrolândia",
+		"ibge": "5209705"
+	},
+	{
+		"id": 105,
+		"descricao": "Hidrolina",
+		"ibge": "5209804"
+	},
+	{
+		"id": 106,
+		"descricao": "Iaciara",
+		"ibge": "5209903"
+	},
+	{
+		"id": 107,
+		"descricao": "Inaciolândia",
+		"ibge": "5209937"
+	},
+	{
+		"id": 108,
+		"descricao": "Indiara",
+		"ibge": "5209952"
+	},
+	{
+		"id": 109,
+		"descricao": "Inhumas",
+		"ibge": "5210000"
+	},
+	{
+		"id": 110,
+		"descricao": "Ipameri",
+		"ibge": "5210109"
+	},
+	{
+		"id": 111,
+		"descricao": "Ipiranga de Goiás",
+		"ibge": "5210158"
+	},
+	{
+		"id": 112,
+		"descricao": "Iporá",
+		"ibge": "5210208"
+	},
+	{
+		"id": 113,
+		"descricao": "Israelândia",
+		"ibge": "5210307"
+	},
+	{
+		"id": 114,
+		"descricao": "Itaberaí",
+		"ibge": "5210406"
+	},
+	{
+		"id": 115,
+		"descricao": "Itaguari",
+		"ibge": "5210562"
+	},
+	{
+		"id": 116,
+		"descricao": "Itaguaru",
+		"ibge": "5210604"
+	},
+	{
+		"id": 117,
+		"descricao": "Itajá",
+		"ibge": "5210802"
+	},
+	{
+		"id": 118,
+		"descricao": "Itapaci",
+		"ibge": "5210901"
+	},
+	{
+		"id": 119,
+		"descricao": "Itapirapuã",
+		"ibge": "5211008"
+	},
+	{
+		"id": 120,
+		"descricao": "Itapuranga",
+		"ibge": "5211206"
+	},
+	{
+		"id": 121,
+		"descricao": "Itarumã",
+		"ibge": "5211305"
+	},
+	{
+		"id": 122,
+		"descricao": "Itauçu",
+		"ibge": "5211404"
+	},
+	{
+		"id": 123,
+		"descricao": "Itumbiara",
+		"ibge": "5211503"
+	},
+	{
+		"id": 124,
+		"descricao": "Ivolândia",
+		"ibge": "5211602"
+	},
+	{
+		"id": 125,
+		"descricao": "Jandaia",
+		"ibge": "5211701"
+	},
+	{
+		"id": 126,
+		"descricao": "Jaraguá",
+		"ibge": "5211800"
+	},
+	{
+		"id": 127,
+		"descricao": "Jataí",
+		"ibge": "5211909"
+	},
+	{
+		"id": 128,
+		"descricao": "Jaupaci",
+		"ibge": "5212006"
+	},
+	{
+		"id": 129,
+		"descricao": "Jesúpolis",
+		"ibge": "5212055"
+	},
+	{
+		"id": 130,
+		"descricao": "Joviânia",
+		"ibge": "5212105"
+	},
+	{
+		"id": 131,
+		"descricao": "Jussara",
+		"ibge": "5212204"
+	},
+	{
+		"id": 132,
+		"descricao": "Lagoa Santa",
+		"ibge": "5212253"
+	},
+	{
+		"id": 133,
+		"descricao": "Leopoldo de Bulhões",
+		"ibge": "5212303"
+	},
+	{
+		"id": 134,
+		"descricao": "Luziânia",
+		"ibge": "5212501"
+	},
+	{
+		"id": 135,
+		"descricao": "Mairipotaba",
+		"ibge": "5212600"
+	},
+	{
+		"id": 136,
+		"descricao": "Mambaí",
+		"ibge": "5212709"
+	},
+	{
+		"id": 137,
+		"descricao": "Mara Rosa",
+		"ibge": "5212808"
+	},
+	{
+		"id": 138,
+		"descricao": "Marzagão",
+		"ibge": "5212907"
+	},
+	{
+		"id": 139,
+		"descricao": "Matrinchã",
+		"ibge": "5212956"
+	},
+	{
+		"id": 140,
+		"descricao": "Maurilândia",
+		"ibge": "5213004"
+	},
+	{
+		"id": 141,
+		"descricao": "Mimoso de Goiás",
+		"ibge": "5213053"
+	},
+	{
+		"id": 142,
+		"descricao": "Minaçu",
+		"ibge": "5213087"
+	},
+	{
+		"id": 143,
+		"descricao": "Mineiros",
+		"ibge": "5213103"
+	},
+	{
+		"id": 144,
+		"descricao": "Moiporá",
+		"ibge": "5213400"
+	},
+	{
+		"id": 145,
+		"descricao": "Monte Alegre de Goiás",
+		"ibge": "5213509"
+	},
+	{
+		"id": 146,
+		"descricao": "Montes Claros de Goiás",
+		"ibge": "5213707"
+	},
+	{
+		"id": 147,
+		"descricao": "Montividiu",
+		"ibge": "5213756"
+	},
+	{
+		"id": 148,
+		"descricao": "Montividiu do Norte",
+		"ibge": "5213772"
+	},
+	{
+		"id": 149,
+		"descricao": "Morrinhos",
+		"ibge": "5213806"
+	},
+	{
+		"id": 150,
+		"descricao": "Morro Agudo de Goiás",
+		"ibge": "5213855"
+	},
+	{
+		"id": 151,
+		"descricao": "Mossâmedes",
+		"ibge": "5213905"
+	},
+	{
+		"id": 152,
+		"descricao": "Mozarlândia",
+		"ibge": "5214002"
+	},
+	{
+		"id": 153,
+		"descricao": "Mundo Novo",
+		"ibge": "5214051"
+	},
+	{
+		"id": 154,
+		"descricao": "Mutunópolis",
+		"ibge": "5214101"
+	},
+	{
+		"id": 155,
+		"descricao": "Nazário",
+		"ibge": "5214408"
+	},
+	{
+		"id": 156,
+		"descricao": "Nerópolis",
+		"ibge": "5214507"
+	},
+	{
+		"id": 157,
+		"descricao": "Niquelândia",
+		"ibge": "5214606"
+	},
+	{
+		"id": 158,
+		"descricao": "Nova América",
+		"ibge": "5214705"
+	},
+	{
+		"id": 159,
+		"descricao": "Nova Aurora",
+		"ibge": "5214804"
+	},
+	{
+		"id": 160,
+		"descricao": "Nova Crixás",
+		"ibge": "5214838"
+	},
+	{
+		"id": 161,
+		"descricao": "Nova Glória",
+		"ibge": "5214861"
+	},
+	{
+		"id": 162,
+		"descricao": "Nova Iguaçu de Goiás",
+		"ibge": "5214879"
+	},
+	{
+		"id": 163,
+		"descricao": "Nova Roma",
+		"ibge": "5214903"
+	},
+	{
+		"id": 164,
+		"descricao": "Nova Veneza",
+		"ibge": "5215009"
+	},
+	{
+		"id": 165,
+		"descricao": "Novo Brasil",
+		"ibge": "5215207"
+	},
+	{
+		"id": 166,
+		"descricao": "Novo Gama",
+		"ibge": "5215231"
+	},
+	{
+		"id": 167,
+		"descricao": "Novo Planalto",
+		"ibge": "5215256"
+	},
+	{
+		"id": 168,
+		"descricao": "Orizona",
+		"ibge": "5215306"
+	},
+	{
+		"id": 169,
+		"descricao": "Ouro Verde de Goiás",
+		"ibge": "5215405"
+	},
+	{
+		"id": 170,
+		"descricao": "Ouvidor",
+		"ibge": "5215504"
+	},
+	{
+		"id": 171,
+		"descricao": "Padre Bernardo",
+		"ibge": "5215603"
+	},
+	{
+		"id": 172,
+		"descricao": "Palestina de Goiás",
+		"ibge": "5215652"
+	},
+	{
+		"id": 173,
+		"descricao": "Palmeiras de Goiás",
+		"ibge": "5215702"
+	},
+	{
+		"id": 174,
+		"descricao": "Palmelo",
+		"ibge": "5215801"
+	},
+	{
+		"id": 175,
+		"descricao": "Palminópolis",
+		"ibge": "5215900"
+	},
+	{
+		"id": 176,
+		"descricao": "Panamá",
+		"ibge": "5216007"
+	},
+	{
+		"id": 177,
+		"descricao": "Paranaiguara",
+		"ibge": "5216304"
+	},
+	{
+		"id": 178,
+		"descricao": "Paraúna",
+		"ibge": "5216403"
+	},
+	{
+		"id": 179,
+		"descricao": "Perolândia",
+		"ibge": "5216452"
+	},
+	{
+		"id": 180,
+		"descricao": "Petrolina de Goiás",
+		"ibge": "5216809"
+	},
+	{
+		"id": 181,
+		"descricao": "Pilar de Goiás",
+		"ibge": "5216908"
+	},
+	{
+		"id": 182,
+		"descricao": "Piracanjuba",
+		"ibge": "5217104"
+	},
+	{
+		"id": 183,
+		"descricao": "Piranhas",
+		"ibge": "5217203"
+	},
+	{
+		"id": 184,
+		"descricao": "Pirenópolis",
+		"ibge": "5217302"
+	},
+	{
+		"id": 185,
+		"descricao": "Pires do Rio",
+		"ibge": "5217401"
+	},
+	{
+		"id": 186,
+		"descricao": "Planaltina",
+		"ibge": "5217609"
+	},
+	{
+		"id": 187,
+		"descricao": "Pontalina",
+		"ibge": "5217708"
+	},
+	{
+		"id": 188,
+		"descricao": "Porangatu",
+		"ibge": "5218003"
+	},
+	{
+		"id": 189,
+		"descricao": "Porteirão",
+		"ibge": "5218052"
+	},
+	{
+		"id": 190,
+		"descricao": "Portelândia",
+		"ibge": "5218102"
+	},
+	{
+		"id": 191,
+		"descricao": "Posse",
+		"ibge": "5218300"
+	},
+	{
+		"id": 192,
+		"descricao": "Professor Jamil",
+		"ibge": "5218391"
+	},
+	{
+		"id": 193,
+		"descricao": "Quirinópolis",
+		"ibge": "5218508"
+	},
+	{
+		"id": 194,
+		"descricao": "Rialma",
+		"ibge": "5218607"
+	},
+	{
+		"id": 195,
+		"descricao": "Rianápolis",
+		"ibge": "5218706"
+	},
+	{
+		"id": 196,
+		"descricao": "Rio Quente",
+		"ibge": "5218789"
+	},
+	{
+		"id": 197,
+		"descricao": "Rio Verde",
+		"ibge": "5218805"
+	},
+	{
+		"id": 198,
+		"descricao": "Rubiataba",
+		"ibge": "5218904"
+	},
+	{
+		"id": 199,
+		"descricao": "Sanclerlândia",
+		"ibge": "5219001"
+	},
+	{
+		"id": 200,
+		"descricao": "Santa Bárbara de Goiás",
+		"ibge": "5219100"
+	},
+	{
+		"id": 201,
+		"descricao": "Santa Cruz de Goiás",
+		"ibge": "5219209"
+	},
+	{
+		"id": 202,
+		"descricao": "Santa Fé de Goiás",
+		"ibge": "5219258"
+	},
+	{
+		"id": 203,
+		"descricao": "Santa Helena de Goiás",
+		"ibge": "5219308"
+	},
+	{
+		"id": 204,
+		"descricao": "Santa Isabel",
+		"ibge": "5219357"
+	},
+	{
+		"id": 205,
+		"descricao": "Santa Rita do Araguaia",
+		"ibge": "5219407"
+	},
+	{
+		"id": 206,
+		"descricao": "Santa Rita do Novo Destino",
+		"ibge": "5219456"
+	},
+	{
+		"id": 207,
+		"descricao": "Santa Rosa de Goiás",
+		"ibge": "5219506"
+	},
+	{
+		"id": 208,
+		"descricao": "Santa Tereza de Goiás",
+		"ibge": "5219605"
+	},
+	{
+		"id": 209,
+		"descricao": "Santa Terezinha de Goiás",
+		"ibge": "5219704"
+	},
+	{
+		"id": 210,
+		"descricao": "Santo Antônio da Barra",
+		"ibge": "5219712"
+	},
+	{
+		"id": 211,
+		"descricao": "Santo Antônio de Goiás",
+		"ibge": "5219738"
+	},
+	{
+		"id": 212,
+		"descricao": "Santo Antônio do Descoberto",
+		"ibge": "5219753"
+	},
+	{
+		"id": 213,
+		"descricao": "São Domingos",
+		"ibge": "5219803"
+	},
+	{
+		"id": 214,
+		"descricao": "São Francisco de Goiás",
+		"ibge": "5219902"
+	},
+	{
+		"id": 215,
+		"descricao": "São João d'Aliança",
+		"ibge": "5220009"
+	},
+	{
+		"id": 216,
+		"descricao": "São João da Paraúna",
+		"ibge": "5220058"
+	},
+	{
+		"id": 217,
+		"descricao": "São Luís de Montes Belos",
+		"ibge": "5220108"
+	},
+	{
+		"id": 218,
+		"descricao": "São Luiz do Norte",
+		"ibge": "5220157"
+	},
+	{
+		"id": 219,
+		"descricao": "São Miguel do Araguaia",
+		"ibge": "5220207"
+	},
+	{
+		"id": 220,
+		"descricao": "São Miguel do Passa Quatro",
+		"ibge": "5220264"
+	},
+	{
+		"id": 221,
+		"descricao": "São Patrício",
+		"ibge": "5220280"
+	},
+	{
+		"id": 222,
+		"descricao": "São Simão",
+		"ibge": "5220405"
+	},
+	{
+		"id": 223,
+		"descricao": "Senador Canedo",
+		"ibge": "5220454"
+	},
+	{
+		"id": 224,
+		"descricao": "Serranópolis",
+		"ibge": "5220504"
+	},
+	{
+		"id": 225,
+		"descricao": "Silvânia",
+		"ibge": "5220603"
+	},
+	{
+		"id": 226,
+		"descricao": "Simolândia",
+		"ibge": "5220686"
+	},
+	{
+		"id": 227,
+		"descricao": "Sítio d'Abadia",
+		"ibge": "5220702"
+	},
+	{
+		"id": 228,
+		"descricao": "Taquaral de Goiás",
+		"ibge": "5221007"
+	},
+	{
+		"id": 229,
+		"descricao": "Teresina de Goiás",
+		"ibge": "5221080"
+	},
+	{
+		"id": 230,
+		"descricao": "Terezópolis de Goiás",
+		"ibge": "5221197"
+	},
+	{
+		"id": 231,
+		"descricao": "Três Ranchos",
+		"ibge": "5221304"
+	},
+	{
+		"id": 232,
+		"descricao": "Trindade",
+		"ibge": "5221403"
+	},
+	{
+		"id": 233,
+		"descricao": "Trombas",
+		"ibge": "5221452"
+	},
+	{
+		"id": 234,
+		"descricao": "Turvânia",
+		"ibge": "5221502"
+	},
+	{
+		"id": 235,
+		"descricao": "Turvelândia",
+		"ibge": "5221551"
+	},
+	{
+		"id": 236,
+		"descricao": "Uirapuru",
+		"ibge": "5221577"
+	},
+	{
+		"id": 237,
+		"descricao": "Uruaçu",
+		"ibge": "5221601"
+	},
+	{
+		"id": 238,
+		"descricao": "Uruana",
+		"ibge": "5221700"
+	},
+	{
+		"id": 239,
+		"descricao": "Urutaí",
+		"ibge": "5221809"
+	},
+	{
+		"id": 240,
+		"descricao": "Valparaíso de Goiás",
+		"ibge": "5221858"
+	},
+	{
+		"id": 241,
+		"descricao": "Varjão",
+		"ibge": "5221908"
+	},
+	{
+		"id": 242,
+		"descricao": "Vianópolis",
+		"ibge": "5222005"
+	},
+	{
+		"id": 243,
+		"descricao": "Vicentinópolis",
+		"ibge": "5222054"
+	},
+	{
+		"id": 244,
+		"descricao": "Vila Boa",
+		"ibge": "5222203"
+	},
+	{
+		"id": 245,
+		"descricao": "Vila Propício",
+		"ibge": "5222302"
+	}
+]

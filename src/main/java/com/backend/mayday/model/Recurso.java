@@ -45,7 +45,7 @@ public class Recurso {
 	
 	@Getter @Setter
 	@Column(name="QUANTIDADE")
-	private String quantidadeRecurso;
+	private String quantidade;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinTable(name="PlanosRecursos", 

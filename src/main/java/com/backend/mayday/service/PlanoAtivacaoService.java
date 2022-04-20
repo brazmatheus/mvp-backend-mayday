@@ -9,12 +9,15 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.backend.mayday.DAO.PlanoAtivacaoResumoDAO;
+import com.backend.mayday.model.Cidade;
 import com.backend.mayday.model.Pessoa;
 import com.backend.mayday.model.PlanoAtivacao;
+import com.backend.mayday.model.PontosInteresse;
 import com.backend.mayday.model.Recurso;
 import com.backend.mayday.repository.PessoaRepository;
 import com.backend.mayday.repository.CidadeRepository;
 import com.backend.mayday.repository.PlanoAtivacaoRepository;
+import com.backend.mayday.repository.PontoInteresseRepository;
 import com.backend.mayday.util.Converters;
 
 @Service
@@ -25,6 +28,9 @@ public class PlanoAtivacaoService {
 	
 	@Autowired
 	private CidadeRepository cidadeRepository;
+	
+	@Autowired
+	private PontoInteresseRepository pontoInteresseRepository;
 	
 	public List<PlanoAtivacao> buscarPlanosContingencia() {
 		try {
@@ -74,11 +80,19 @@ public class PlanoAtivacaoService {
 		try {
 			List<Pessoa> agente = plano.getAgentes();
 			List<Recurso> recursos = plano.getRecursos();
+			Cidade cidade = plano.getCidade();
+//			List<PontosInteresse> pontos = plano.getPontoInteresse();
 			plano.setAgentes(null);
 			plano.setRecursos(null);
+			plano.setCidade(null);
+//			plano.setPontoInteresse(null);
+			for(PontosInteresse p: plano.getPontoInteresse()) {
+				p.setPlanoAtivacao(plano);
+			}
 			PlanoAtivacao pSaved = this.planoAtivacaoRepository.save(plano);
 			pSaved.setAgentes(agente);
 			pSaved.setRecursos(recursos);
+			pSaved.setCidade(cidade);
 			return this.planoAtivacaoRepository.save(pSaved);
 		}catch(Exception e) {
 			throw e;

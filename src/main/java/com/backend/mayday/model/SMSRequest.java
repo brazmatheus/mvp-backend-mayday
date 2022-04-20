@@ -16,7 +16,7 @@ public class SMSRequest {
 	private Integer type;
 	@Getter
 	@Setter
-	private BigInteger number;
+	private String number;
 	@Getter 
 	@Setter
 	private String msg;
