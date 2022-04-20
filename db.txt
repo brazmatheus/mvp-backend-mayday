@@ -1,0 +1,270 @@
+-- Table: public.tipopontosinteresse
+
+-- DROP TABLE IF EXISTS public.tipopontosinteresse;
+
+CREATE TABLE IF NOT EXISTS public.tipopontosinteresse
+(
+    id integer NOT NULL,
+    descricao character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT tipopontosinteresse_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.tipopontosinteresse
+    OWNER to postgres;
+	
+-- Table: public.cidade
+
+-- DROP TABLE IF EXISTS public.cidade;
+
+CREATE TABLE IF NOT EXISTS public.cidade
+(
+    id integer NOT NULL,
+    descricao character varying(255) COLLATE pg_catalog."default",
+    ibge character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT cidade_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.cidade
+    OWNER to postgres;
+	
+-- Table: public.planoativacao
+
+-- DROP TABLE IF EXISTS public.planoativacao;
+
+CREATE TABLE IF NOT EXISTS public.planoativacao
+(
+    id integer NOT NULL,
+    comunicacaoalternativa character varying(255) COLLATE pg_catalog."default",
+    danos character varying(255) COLLATE pg_catalog."default",
+    descricao character varying(255) COLLATE pg_catalog."default",
+    historicoeventos character varying(255) COLLATE pg_catalog."default",
+    subtitulo character varying(255) COLLATE pg_catalog."default",
+    titulo character varying(255) COLLATE pg_catalog."default",
+    id_cidade integer,
+    CONSTRAINT planoativacao_pkey PRIMARY KEY (id),
+    CONSTRAINT fkw06yhhmkvyflnghs9xkpvouc FOREIGN KEY (id_cidade)
+        REFERENCES public.cidade (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.planoativacao
+    OWNER to postgres;
+	
+-- Table: public.tags
+
+-- DROP TABLE IF EXISTS public.tags;
+
+CREATE TABLE IF NOT EXISTS public.tags
+(
+    id integer NOT NULL,
+    cor character varying(255) COLLATE pg_catalog."default",
+    descricao character varying(255) COLLATE pg_catalog."default",
+    id_planocontingencia integer,
+    CONSTRAINT tags_pkey PRIMARY KEY (id),
+    CONSTRAINT fksrncic527arfhj5ywvgmv46gt FOREIGN KEY (id_planocontingencia)
+        REFERENCES public.planoativacao (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.tags
+    OWNER to postgres;
+	
+-- Table: public.departamento
+
+-- DROP TABLE IF EXISTS public.departamento;
+
+CREATE TABLE IF NOT EXISTS public.departamento
+(
+    id integer NOT NULL,
+    descricao character varying(255) COLLATE pg_catalog."default",
+    id_cidade integer,
+    CONSTRAINT departamento_pkey PRIMARY KEY (id),
+    CONSTRAINT fklgiu7hvtk9bjoopx1328fho5l FOREIGN KEY (id_cidade)
+        REFERENCES public.cidade (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.departamento
+    OWNER to postgres;
+	
+-- Table: public.cargo
+
+-- DROP TABLE IF EXISTS public.cargo;
+
+CREATE TABLE IF NOT EXISTS public.cargo
+(
+    id integer NOT NULL,
+    descricao character varying(255) COLLATE pg_catalog."default",
+    id_departamento integer,
+    CONSTRAINT cargo_pkey PRIMARY KEY (id),
+    CONSTRAINT fkodkmdcrxaxkdiqly1qpjj3t5n FOREIGN KEY (id_departamento)
+        REFERENCES public.departamento (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.cargo
+    OWNER to postgres;
+
+-- Table: public.pessoa
+
+-- DROP TABLE IF EXISTS public.pessoa;
+
+CREATE TABLE IF NOT EXISTS public.pessoa
+(
+    id character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    nome character varying(255) COLLATE pg_catalog."default",
+    telefone character varying(255) COLLATE pg_catalog."default",
+    id_cargo integer,
+    id_cidade integer,
+    CONSTRAINT pessoa_pkey PRIMARY KEY (id),
+    CONSTRAINT fk2uqjx2spsarb5niga8mdiu0h5 FOREIGN KEY (id_cargo)
+        REFERENCES public.cargo (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fksgjdtv8n15pcg0oghjrai00j7 FOREIGN KEY (id_cidade)
+        REFERENCES public.cidade (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pessoa
+    OWNER to postgres;
+	
+-- Table: public.planos_agentes
+
+-- DROP TABLE IF EXISTS public.planos_agentes;
+
+CREATE TABLE IF NOT EXISTS public.planos_agentes
+(
+    agentes_id integer NOT NULL,
+    planos_contingencia_id character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT ukik081oskl5lm1wiolqq5t7jea UNIQUE (planos_contingencia_id, agentes_id),
+    CONSTRAINT fke21q7c99dn3e1hfweggb2mg77 FOREIGN KEY (agentes_id)
+        REFERENCES public.planoativacao (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fkfictsapuxrt4ahwkxdttg5p1b FOREIGN KEY (planos_contingencia_id)
+        REFERENCES public.pessoa (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.planos_agentes
+    OWNER to postgres;
+	
+-- Table: public.recurso
+
+-- DROP TABLE IF EXISTS public.recurso;
+
+CREATE TABLE IF NOT EXISTS public.recurso
+(
+    id integer NOT NULL,
+    descricao character varying(255) COLLATE pg_catalog."default",
+    quantidade character varying(255) COLLATE pg_catalog."default",
+    id_responsavel character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT recurso_pkey PRIMARY KEY (id),
+    CONSTRAINT fk1pfhlgienow2bj5n5o3whf0lc FOREIGN KEY (id_responsavel)
+        REFERENCES public.pessoa (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.recurso
+    OWNER to postgres;	
+	
+-- Table: public.planos_recursos
+
+-- DROP TABLE IF EXISTS public.planos_recursos;
+
+CREATE TABLE IF NOT EXISTS public.planos_recursos
+(
+    planos_contingencia_id integer NOT NULL,
+    recursos_id integer NOT NULL,
+    CONSTRAINT uknyv1end7upvjrnhs5xu2vtt8 UNIQUE (planos_contingencia_id, recursos_id),
+    CONSTRAINT fk22xdjbmtsj7s7aac7xi2geda7 FOREIGN KEY (recursos_id)
+        REFERENCES public.planoativacao (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fkdvf9542y9fq1am5t2a6xnym3u FOREIGN KEY (planos_contingencia_id)
+        REFERENCES public.recurso (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.planos_recursos
+    OWNER to postgres;
+	
+-- Table: public.pontointeresse
+
+-- DROP TABLE IF EXISTS public.pontointeresse;
+
+CREATE TABLE IF NOT EXISTS public.pontointeresse
+(
+    id integer NOT NULL,
+    cor character varying(255) COLLATE pg_catalog."default",
+    latitude character varying(255) COLLATE pg_catalog."default",
+    longitute character varying(255) COLLATE pg_catalog."default",
+    mensagem character varying(255) COLLATE pg_catalog."default",
+    id_plano integer,
+    id_tiposponto integer,
+    CONSTRAINT pontointeresse_pkey PRIMARY KEY (id),
+    CONSTRAINT fkhe7lrrbe4rxiflr5fv2g9vwgn FOREIGN KEY (id_plano)
+        REFERENCES public.planoativacao (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fkr7gxmskwrb0vur6nm6sw0xevj FOREIGN KEY (id_tiposponto)
+        REFERENCES public.tipopontosinteresse (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pontointeresse
+    OWNER to postgres;
+	
+-- Table: public.usuario
+
+-- DROP TABLE IF EXISTS public.usuario;
+
+CREATE TABLE IF NOT EXISTS public.usuario
+(
+    id integer NOT NULL,
+    senha character varying(255) COLLATE pg_catalog."default",
+    usuario character varying(255) COLLATE pg_catalog."default",
+    id_pessoa character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT usuario_pkey PRIMARY KEY (id),
+    CONSTRAINT fkihpr6fsj9vxc6aqg9seaicql6 FOREIGN KEY (id_pessoa)
+        REFERENCES public.pessoa (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.usuario
+    OWNER to postgres;
